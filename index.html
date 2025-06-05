@@ -18,11 +18,14 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
-    <!--  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- cormorant garamond -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- dancing script -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -34,9 +37,11 @@
       }
     </style>
   </head>
-  <body class="bg-gradient-to-r from-[#f6d9db] to-[#f6e9ec] text-gray-800">
-    <!-- Navbar -->
-    <header class="flex items-center justify-between px-6 py-4">
+  <body class="bg-gradient-to-r from-[#f6d9db] to-[#f6e9ec]">
+    <!-- Navbar start -->
+    <header
+      class="w-11/12 mx-auto flex items-center justify-between px-6 py-4 border-b border-[#f6cbce]"
+    >
       <!-- Left: Logo -->
       <div class="text-2xl font-bold text-red-900 font-cormorant">Petale</div>
 
@@ -51,9 +56,49 @@
       <!-- Right: Icons -->
       <!-- Right Side Icons -->
       <div class="flex items-center gap-4">
-        <img src="images/icons/search.png" alt="" class="w-5 h-5" />
-        <img src="images/icons/shopping-bag.png" alt="" class="w-6 h-6" />
+        <img src="images/icons/search.png" alt="" class="w-4 h-4" />
+        <img src="images/icons/shopping-bag.png" alt="" class="w-5 h-5" />
       </div>
     </header>
+    <!-- navbar end -->
+    <!-- Hero Section -->
+    <section
+      class="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10"
+    >
+      <!-- Left Side: Text -->
+      <div class="text-center md:text-left md:w-1/2">
+        <h2 class="text-pink-500 text-xl font-playfair">Signature scent</h2>
+        <h1 class="text-4xl md:text-5xl font-semibold mt-2">
+          Floral fantasy<br />in a bottle
+        </h1>
+        <p class="mt-4 max-w-xl md:mx-0 mx-auto text-gray-600">
+          Crafted with the finest blooms, each spritz captivates the senses,
+          transporting you to a fragrant garden in full bloom.
+        </p>
+
+        <div class="flex justify-center md:justify-start mt-6 gap-4">
+          <button
+            class="bg-yellow-200 hover:bg-yellow-300 px-6 py-2 rounded-full text-sm font-medium"
+          >
+            All Scents
+          </button>
+          <button
+            class="flex items-center gap-2 text-sm text-gray-700 hover:underline"
+          >
+            <span>About Us</span>
+            <span>➜</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Side: Perfume Image -->
+      <div class="mt-10 md:mt-0 md:w-1/2 flex justify-center">
+        <img
+          src="https://i.ibb.co/0K2v5Q2/perfume-bottle.png"
+          alt="Perfume Bottle"
+          class="max-w-sm rounded-3xl shadow-lg"
+        />
+      </div>
+    </section>
   </body>
 </html>
