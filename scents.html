@@ -61,7 +61,17 @@
       <!-- Right Side -->
       <div class="flex items-center gap-4">
         <img src="images/icons/search.png" alt="" class="w-4 h-4" />
-        <img src="images/icons/shopping-bag.png" alt="" class="w-5 h-5" />
+        <!-- Bag Button -->
+        <button id="cart-btn" class="relative">
+          <img src="images/icons/shopping-bag.png" alt="Cart" class="w-6 h-6" />
+
+          <!-- Count Badge -->
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+            >0</span
+          >
+        </button>
       </div>
     </header>
     <!-- navbar end -->
