@@ -12,9 +12,16 @@ function updateCartUI() {
   const cartCount = document.getElementById("cart-count");
 
   cartList.innerHTML = "";
-  cart.forEach((item) => {
+
+  cart.forEach((item, index) => {
     const li = document.createElement("li");
-    li.textContent = `${item.name} - $${item.price}`;
+    li.className = "flex justify-between items-center";
+
+    li.innerHTML = `
+        <span>${item.name} - $${item.price}</span>
+        <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button>
+      `;
+
     cartList.appendChild(li);
   });
 
@@ -23,12 +30,17 @@ function updateCartUI() {
   cartCount.textContent = cart.length;
 }
 
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartUI();
+}
+
 function toggleCart() {
   const cartItemsDiv = document.getElementById("cart-items");
   cartItemsDiv.classList.toggle("hidden");
 }
 
-// Load from localStorage when page loads
 window.addEventListener("DOMContentLoaded", () => {
   const savedCart = localStorage.getItem("cart");
   if (savedCart) {
