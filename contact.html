@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floral Fantasy</title>
+    <!-- Tailwind & DaisyUi -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- cormorant garamond -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- dancing script -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .font-cormorant {
+        font-family: "Cormorant Garamond", serif;
+      }
+      .font-dancing {
+        font-family: "Dancing Script", cursive;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-r from-[#f6d9db] to-[#faf1f3]">
+    <!-- Navbar start -->
+    <header
+      class="w-11/12 mx-auto flex items-center justify-between px-6 py-4 border-b border-[#f6cbce]"
+    >
+      <!-- Left -->
+      <div class="text-4xl font-bold text-yellow-800 font-cormorant">
+        Petale
+      </div>
+
+      <!-- Center -->
+      <nav class="hidden md:flex gap-6 text-gray-700">
+        <a href="index.html" class="hover:text-pink-800">Home</a>
+        <a href="scents.html" class="hover:text-pink-800">Scents</a>
+        <a href="history.html" class="hover:text-pink-800">History</a>
+        <a href="contact.html" class="hover:text-pink-800">Contact</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-4 relative">
+        <img src="images/icons/search.png" alt="" class="w-4 h-4" />
+
+        <button onclick="toggleCart()" class="relative">
+          <img src="images/icons/shopping-bag.png" alt="" class="w-5 h-5" />
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center shadow"
+            >0</span
+          >
+        </button>
+
+        <!-- Cart Dropdown -->
+        <div
+          id="cart-items"
+          class="hidden absolute top-full right-0 mt-3 w-80 bg-white rounded-xl shadow-xl z-50 border border-gray-100 transition-all duration-300 ease-in-out"
+        >
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3 border-b pb-2">
+              🛒 Your Cart
+            </h3>
+
+            <ul
+              id="cart-list"
+              class="space-y-3 max-h-60 overflow-y-auto text-sm text-gray-700 custom-scrollbar"
+            ></ul>
+
+            <hr class="my-3" />
+
+            <div class="text-right font-bold text-gray-800">
+              Total: $<span id="cart-total">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar end -->
+    <!-- main start -->
+    <main class="relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-96 h-[500px] bg-[url('/images/flower-petal.jpeg')] bg-no-repeat bg-contain opacity-5 pointer-events-none hidden md:block"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-[500px] bg-[url('/images/flower-petal2.png')] bg-no-repeat bg-contain opacity-10 pointer-events-none hidden md:block"
+      ></div>
+      <!-- Hero Section -->
+      <section class="py-16 text-center">
+        <h2 class="text-4xl font-bold text-yellow-900 mb-4">Contact Us</h2>
+        <p class="text-gray-700 max-w-xl mx-auto">
+          Have questions, feedback, or need help? We'd love to hear from you.
+          Our team will get back to you as soon as possible.
+        </p>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="py-8 px-6">
+        <div class="max-w-3xl mx-auto bg-pink-50 rounded-2xl p-8">
+          <form class="space-y-6">
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- main start -->
+    <!-- footer start -->
+    <footer class="bg-pink-50 text-yellow-900 mt-20 font-cormorant">
+      <div
+        class="max-w-7xl mx-auto px-6 py-12 md:flex md:justify-between md:items-start"
+      >
+        <!-- Brand Info -->
+        <div class="mb-8 md:mb-0 md:w-1/3">
+          <h2 class="text-2xl font-bold tracking-wide">Floral Fantasy</h2>
+          <p class="mt-4 text-md leading-relaxed text-yellow-800">
+            A scent that whispers elegance — <br />inspired by blooming petals
+            <br />and timeless beauty. Let your <br />
+            essence linger like a floral dream.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="md:w-1/3 mb-8 md:mb-0">
+          <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-md text-yellow-800">
+            <li>
+              <a href="index.html" class="hover:text-yellow-600 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-600 transition"
+                >Ingredients</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-600 transition">About</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-600 transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="md:w-1/3">
+          <h3 class="text-2xl font-bold mb-4">Stay Connected</h3>
+          <p class="text-md text-yellow-800 mb-3">
+            Join our newsletter for scent updates:
+          </p>
+          <form class="flex items-center">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-3 py-2 border border-[#eedcdd] rounded-l-md focus:outline-none text-sm"
+            />
+            <button
+              class="bg-yellow-900 text-white px-4 py-2 rounded-r-md hover:bg-yellow-800 transition text-sm"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="text-center text-md font-semibold py-4 border-t border-[#eedcdd] text-yellow-700"
+      >
+        © 2025 Floral Fantasy. All rights reserved.
+      </div>
+    </footer>
+    <!-- footer end -->
+    <script src="scents.js"></script>
+  </body>
+</html>
