@@ -2,6 +2,7 @@ let cart = [];
 
 function addToCart(name, price) {
   cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
   updateCartUI();
 }
 
@@ -26,3 +27,12 @@ function toggleCart() {
   const cartItemsDiv = document.getElementById("cart-items");
   cartItemsDiv.classList.toggle("hidden");
 }
+
+// Load from localStorage when page loads
+window.addEventListener("DOMContentLoaded", () => {
+  const savedCart = localStorage.getItem("cart");
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+    updateCartUI();
+  }
+});
