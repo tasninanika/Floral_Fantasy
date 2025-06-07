@@ -1,4 +1,4 @@
-<h1 align="center">🌸 Petal - Rose Petal Perfume Website</h1>
+<h1 align="center">🌸 Petale - Rose Petal Perfume Website</h1>
 
 <p align="center">
   A romantic and elegant single-brand perfume website built with simplicity and interactivity in mind.
@@ -16,7 +16,7 @@
 
 ## Overview
 
-**Petal** is a front-end perfume eCommerce concept site focused on showcasing rose-inspired scents with an intuitive user interface. The website combines elegance with functionality — from scent exploration to cart management — offering a clean and luxurious browsing experience.
+**Petale** is a front-end perfume eCommerce concept site focused on showcasing rose-inspired scents with an intuitive user interface. The website combines elegance with functionality — from scent exploration to cart management — offering a clean and luxurious browsing experience.
 
 ---
 
