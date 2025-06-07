@@ -19,7 +19,7 @@ function updateCartUI() {
 
     li.innerHTML = `
         <span>${item.name} - $${item.price}</span>
-        <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button>
+        <button onclick="removeFromCart(${index})" class="text-red-500 btn px-2">Remove</button>
       `;
 
     cartList.appendChild(li);

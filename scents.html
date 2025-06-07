@@ -59,28 +59,39 @@
       </nav>
 
       <!-- Right Side -->
+      <!-- Cart Button -->
       <div class="flex items-center gap-4 relative">
         <img src="images/icons/search.png" alt="" class="w-4 h-4" />
-        <!-- Button -->
+
         <button onclick="toggleCart()" class="relative">
           <img src="images/icons/shopping-bag.png" alt="" class="w-5 h-5" />
           <span
             id="cart-count"
-            class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+            class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center shadow"
             >0</span
           >
         </button>
 
-        <!-- Cart Section -->
+        <!-- Cart Dropdown -->
         <div
           id="cart-items"
-          class="hidden absolute top-full mt-2 right-0 w-96 bg-white p-6 rounded-xl shadow-lg z-50"
+          class="hidden absolute top-full right-0 mt-3 w-80 bg-white rounded-xl shadow-xl z-50 border border-gray-100 transition-all duration-300 ease-in-out"
         >
-          <h3 class="text-xl font-bold mb-4">Your Cart</h3>
-          <ul id="cart-list" class="space-y-2 text-sm text-gray-700"></ul>
-          <hr class="my-4" />
-          <div class="text-right font-semibold text-gray-800">
-            Total: $<span id="cart-total">0</span>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3 border-b pb-2">
+              🛒 Your Cart
+            </h3>
+
+            <ul
+              id="cart-list"
+              class="space-y-3 max-h-60 overflow-y-auto text-sm text-gray-700 custom-scrollbar"
+            ></ul>
+
+            <hr class="my-3" />
+
+            <div class="text-right font-bold text-gray-800">
+              Total: $<span id="cart-total">0</span>
+            </div>
           </div>
         </div>
       </div>
