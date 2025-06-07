@@ -1,23 +1,28 @@
-const cartItems = document.getElementById("cart-items");
-const totalPriceElement = document.getElementById("total-price");
-const cartCountElement = document.getElementById("cart-count");
-const cartSection = document.getElementById("cart");
-const cartBtn = document.getElementById("cart-btn");
-
-let total = 0;
-let itemCount = 0;
+let cart = [];
 
 function addToCart(name, price) {
-  const li = document.createElement("li");
-  li.textContent = `${name} - $${price}`;
-  cartItems.appendChild(li);
-
-  total += price;
-  itemCount++;
-  cartCountElement.textContent = itemCount;
-  totalPriceElement.textContent = `Total: $${total}`;
+  cart.push({ name, price });
+  updateCartUI();
 }
 
-cartBtn.addEventListener("click", () => {
-  cartSection.classList.toggle("hidden");
-});
+function updateCartUI() {
+  const cartList = document.getElementById("cart-list");
+  const cartTotal = document.getElementById("cart-total");
+  const cartCount = document.getElementById("cart-count");
+
+  cartList.innerHTML = "";
+  cart.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} - $${item.price}`;
+    cartList.appendChild(li);
+  });
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  cartTotal.textContent = total;
+  cartCount.textContent = cart.length;
+}
+
+function toggleCart() {
+  const cartItemsDiv = document.getElementById("cart-items");
+  cartItemsDiv.classList.toggle("hidden");
+}
